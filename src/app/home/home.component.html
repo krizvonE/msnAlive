@@ -1,22 +1,8 @@
 
-<nav class="navbar navbar-expand-lg navbar-light gradient1 ">
-  <img src="/../assets/msn_imgs/logo_live.png" alt="">
-    <a class="navbar-brand text-white" routerLink="/home">MSN Alive!</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
-      <div class="navbar-nav ">
-        <a class="nav-item text-white" href="#">Configuración</a>
-        <a class="nav-item text-white" href="#">Acerca de</a>
-      </div>
-    </div>
-</nav>
-
 <div class=" sticky-top ">
   <div class="row gradientHeader">
     <div class="col-md-2 col-12">
-      <img src="http://via.placeholder.com/110x110" class="img-thumbnail img-fluid" alt="">
+      <img width="110" heigth="110"  src="http://via.placeholder.com/110x110" class="img-thumbnail img-fluid" alt="">
     </div>
     <div class="col-md-10 col-12">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -33,17 +19,21 @@
   </div>
 </div>
 <div class="container-fluid">
+      <div class="input-group mb-3">
+        
+        <input type="search" class="form-control" placeholder="Buscar un contacto o un número..." aria-label="Search" aria-describedby="basic-addon1">
+        <div class="input-group-append">
+            <span class="input-group-mb3 mx-auto" >
+                <img width="30" heigth="30" src="/../assets/msn_imgs/logo_live_add.png" >
+            </span>
+          </div>  
+      </div>
   <div class="row">
-    <div class="col-12"> 
-      <input type="text"> 
-      <i src="/../assets/msn_imgs/logo_live.png"> </i>
-    </div>
-  </div>
-  <div class="row"> 
-    <ul>
+    <ul class="vinietaContacto">
       <li routerLink="/conversation/{{user.userId}}" *ngFor="let user of users">
-        {{user.nick}}
+        {{user.name}} {{user.status}}
       </li>
-    </ul></div>
+    </ul>
+  </div>
 </div>
 

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
+import { UserFirebaseService } from '../user-firebase.service';
+
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,13 @@ import { UserService } from '../user.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  users = [];
-  constructor(public userService: UserService) { 
-    this.users = this.userService.getUsers();
+  users: any;
+  constructor(public userService: UserService, public userFirebaseService: UserFirebaseService) { 
+    const stream = this.userFirebaseService.getUsers();
+    stream.valueChanges().subscribe((result) => {
+      this.users = result;
+    });
+
     console.log(this.users);
   }
 
