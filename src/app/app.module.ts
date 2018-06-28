@@ -14,13 +14,15 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
   {path: 'home', component: HomeComponent},
   {path: 'conversation/:user_id', component: ConversationComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'login', component: LoginComponent} 
+  {path: 'login', component: LoginComponent},
+  {path: 'profile', component: ProfileComponent}
 ];
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ const appRoutes: Routes = [
     HomeComponent,
     ConversationComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule, 

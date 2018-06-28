@@ -6,9 +6,16 @@
         </button>
         <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
         <div class="navbar-nav ">
-            <a class="nav-item text-white" href="#">Configuración</a>
-            <a class="nav-item text-white" href="#">Acerca de</a>
             <a class="nav-item text-white" routerLink="/register">Registro</a>
+        </div>
+        <div>
+            <a class="nav-item text-white" href="#">Configuración</a>
+        </div>
+        <div>
+            <a class="nav-item text-white" href="#">Acerca de</a>
+        </div>
+        <div>
+            <a class="nav-item text-white" routerLink="/login" (click) = "logOut()"> Cerrar Sesión </a>
         </div>
         </div>
 </nav>
