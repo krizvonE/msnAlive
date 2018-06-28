@@ -14,3 +14,6 @@
 .gridBg {
   background-color: rgba(255, 255, 255, 0.8);
 }
+.bgImage {
+  background-image: url("http://blogary.cbuchart.com/wp-content/uploads/2012/02/grad1_100.png");
+}

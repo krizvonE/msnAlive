@@ -1,21 +1,10 @@
 
-<div class=" sticky-top ">
-  <div class="row gradientHeader">
-    <div class="col-md-2 col-12">
+<div class=" sticky-top bgImageHeader ">
+  <div class="row ">
+    <div class="col-md-2 col-12 ">
       <img width="110" heigth="110"  src="http://via.placeholder.com/110x110" class="img-thumbnail img-fluid" alt="">
     </div>
-    <div class="col-md-10 col-12">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              online
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-
-    </div>
+    
   </div>
 </div>
 <div class="container-fluid">
@@ -29,8 +18,8 @@
           </div>  
       </div>
   <div class="row">
-    <ul class="vinietaContacto">
-      <li routerLink="/conversation/{{user.userId}}" *ngFor="let user of users">
+    <ul class="">
+      <li routerLink="/conversation/{{user.user_id}}" *ngFor="let user of users">
         {{user.name}} {{user.status}}
       </li>
     </ul>

@@ -8,20 +8,20 @@ import { UserFirebaseService } from '../user-firebase.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  users: any;
+  
   constructor(public userFirebaseService: UserFirebaseService) { }
 
   ngOnInit() {
   }
 
-  addUser() {
+  addUser(name, nick, subnick, email, status, avatar) {
     const user = {
-      name: '',
-      nick: '',
-      subnick: '',
-      email: '',
-      status: '',
-      avatar: '',
+      name:  name,
+      nick: nick,
+      subnick: subnick,
+      email: email,
+      status: status,
+      avatar: avatar,
       user_id: Date.now()
     };
     const promise = this.userFirebaseService.createUser(user); 

@@ -5,5 +5,7 @@
     background: linear-gradient(to bottom, #e4f5fc 0%,#bfe8f9 50%,#9fd8ef 51%,#2ab0ed 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e4f5fc', endColorstr='#2ab0ed',GradientType=0 );
 }
-.vinietaContacto{
+.bgImageHeader{
+    height: 20%;
+    background-image: url(/assets/msn_imgs/msnbg.jpg);
 }

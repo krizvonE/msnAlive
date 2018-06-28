@@ -1,0 +1,22 @@
+.bgPage {
+    background-image: url(/assets/msn_imgs/msnbg_tall.jpg);
+}
+.divExample {
+    background-color: #f1f1f1;
+    padding: 0.01em 16px;
+    margin: 10px 0;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)!important;
+    display: block;
+    font-size: 200px;
+}
+.divEnd {
+    background-color: #f1f1f1;
+    font-size: 30px;
+    width: 935px
+}
+.marginTop {
+    margin-top: 250px;
+}
+hr {
+    width: 935px;
+}
