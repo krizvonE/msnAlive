@@ -1,17 +1,19 @@
 <div class="row justify-content-center align-items-center bgImage ">
     <div class="col-md-4 ">
       <h6>Nombre:</h6>
-      <input type="text" [(ngModel)]="addUser().user.name" placeholder="Nombre"  class="form-control">
+      <input type="text" [(ngModel)]="name" placeholder="Nombre"  class="form-control">
       <h6>Nick:</h6>
-      <input type="text" [(ngModel)]="addUser().user.nick" placeholder="Nick"  class="form-control">
+      <input type="text" [(ngModel)]="nick" placeholder="Nick"  class="form-control">
       <h6>Subnick:</h6>
-      <input type="text" [(ngModel)]="addUser().user.subnick" placeholder="Subnick"  class="form-control">
+      <input type="text" placeholder="Subnick"  class="form-control">
       <h6>Email:</h6>
-      <input type="text" [(ngModel)]="addUser().user.email" placeholder="Email"  class="form-control">
+      <input type="text" [(ngModel)]="email" placeholder="Email"  class="form-control">
       <h6>Status:</h6>
-      <input type="text" [(ngModel)]="addUser().user.status" placeholder="Status"  class="form-control">
+      <input type="text" [(ngModel)]="status" placeholder="Status"  class="form-control">
       <h6>Avatar:</h6>
-      <input type="text" [(ngModel)]="addUser().user.avatar" placeholder="Avatar"  class="form-control">
-      <button (click) = "addUser()" >Registrar</button>
+      <input type="text"  placeholder="Avatar"  class="form-control">
+      <h6>Password</h6>
+      <input type="password" [(ngModel)]="password" placeholder="Password"  class="form-control">
+      <button (click) = "signUp()" >Registrar</button>
     </div>
 </div>

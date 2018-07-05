@@ -1,28 +1,47 @@
-
 <div class=" sticky-top bgImageHeader ">
   <div class="row ">
     <div class="col-md-2 col-12 ">
-      <img width="110" heigth="110"  src="http://via.placeholder.com/110x110" class="img-thumbnail img-fluid" alt="">
+      <img width="110" heigth="110" src="http://via.placeholder.com/110x110" class="img-thumbnail img-fluid" alt="">
     </div>
-    
+
   </div>
 </div>
 <div class="container-fluid">
-      <div class="input-group mb-3">
-        
-        <input type="search" class="form-control" placeholder="Buscar un contacto o un número..." aria-label="Search" aria-describedby="basic-addon1">
-        <div class="input-group-append">
-            <span class="input-group-mb3 mx-auto" >
-                <img width="30" heigth="30" src="/../assets/msn_imgs/logo_live_add.png" >
-            </span>
-          </div>  
-      </div>
-  <div class="row">
+  <div class="input-group mb-3">
+
+    <input type="search" class="form-control" placeholder="Buscar un contacto o un número..." aria-label="Search" aria-describedby="basic-addon1"
+      [(ngModel)]="query" />
+    <div class="input-group-append">
+      <span class="input-group-mb3 mx-auto">
+        <img width="30" heigth="30" src="/../assets/msn_imgs/logo_live_add.png" (click)="open(content)">
+      </span>
+    </div>
+  </div>
+  <app-friend *ngFor="let user of users" [user_id]="user.user_id"></app-friend>
+  <!-- <div class="row">
     <ul class="">
-      <li routerLink="/conversation/{{user.user_id}}" *ngFor="let user of users">
+      <li routerLink="/conversation/{{user.user_id}}" *ngFor="let user of users | search: query">
         {{user.name}} {{user.status}}
       </li>
     </ul>
-  </div>
+  </div> -->
 </div>
 
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Agregar amigo</h4>
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <b>Ingresar el email de tu amigo</b>
+      <input type="text"  class="form-control" placeholder="Agregar amigo" [(ngModel)]="requestEmail">
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="d('Cancel click')">Cancelar</button>
+      <button type="button" class="btn btn-outline-dark" (click)="sendRequest()">Enviar</button>
+    </div>
+  </ng-template>
+  
+ 

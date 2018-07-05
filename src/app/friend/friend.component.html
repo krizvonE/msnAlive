@@ -1,0 +1,5 @@
+<div *ngIf="friend" class="col-md-12 " routerLink="/conversation/{{friend.user_id}}">
+    <img width="30" heigth="30" src="assets/msn_imgs/logo_live_{{friend.status || 'offline'}}.png">
+<b>{{friend.nick}}</b>
+<small *ngIf="friend.subnick"> - {{friend.subnick}} </small>
+</div>

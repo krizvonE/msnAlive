@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserFirebaseService } from '../user-firebase.service';
+import { AuthenticationService } from '../authentication.service';
 
 
 @Component({
@@ -8,27 +9,46 @@ import { UserFirebaseService } from '../user-firebase.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  
-  constructor(public userFirebaseService: UserFirebaseService) { }
+  name: string;
+  nick: string;
+  email: string;
+  status: string;
+  password: string;
+  registeredUid: any;
+  constructor(public userFirebaseService: UserFirebaseService, public authenticationService: AuthenticationService) { }
 
   ngOnInit() {
   }
 
-  addUser(name, nick, subnick, email, status, avatar) {
+  addUser() {
     const user = {
-      name:  name,
-      nick: nick,
-      subnick: subnick,
-      email: email,
-      status: status,
-      avatar: avatar,
-      user_id: Date.now()
+      name:  this.name,
+      nick: this.nick,
+      // subnick: subnick,
+      email: this.email,
+      status: this.status,
+      // avatar: avatar,
+      user_id: this.registeredUid,
+      password: this.password
     };
-    const promise = this.userFirebaseService.createUser(user); 
+    const promise = this.userFirebaseService.createUser(user);
+    this.signUp();
     promise.then(() => {
       alert('Usuario agregado con éxito');
     }).catch((error) => {
       alert('No se pudo agregar el usuario');
+      console.log(error);
+    });
+  }
+  signUp() {
+    const promise = this.authenticationService.signUp(this.email, this.password);
+    promise.then( (data) => {
+      this.registeredUid = data.user.uid;
+      alert('Registro éxitoso');
+      this.addUser();
+      console.log(data);
+    }).catch((error) => {
+      alert('Ocurrio un error');
       console.log(error);
     });
   }
@@ -42,7 +62,7 @@ export class RegisterComponent implements OnInit {
       avatar: '',
       user_id: ''
     };
-    const promise = this.userFirebaseService.createUser(user); 
+    const promise = this.userFirebaseService.createUser(user);
     promise.then(() => {
       alert('Usuario editado con éxito');
     }).catch((error) => {

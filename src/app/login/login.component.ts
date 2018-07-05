@@ -26,5 +26,15 @@ export class LoginComponent implements OnInit {
       console.log(error);
     });
   }
+  signUp() {
+    const promise = this.authenticationService.signUp(this.email, this.password);
+    promise.then( (data) => {
+      alert('Registro éxitoso');
+      console.log(data);
+    }).catch((error) => {
+      alert('Ocurrio un error');
+      console.log(error);
+    });
+  }
 
 }
